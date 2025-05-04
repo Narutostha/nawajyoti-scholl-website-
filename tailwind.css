@@ -1,0 +1,194 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --babylonschool-edu-np-quicksand-bold-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-quicksand-bold-font-size: 32px;
+  --babylonschool-edu-np-quicksand-bold-font-style: normal;
+  --babylonschool-edu-np-quicksand-bold-font-weight: 700;
+  --babylonschool-edu-np-quicksand-bold-letter-spacing: 0px;
+  --babylonschool-edu-np-quicksand-bold-line-height: 48px;
+  --babylonschool-edu-np-quicksand-bold-upper-font-family: "Quicksand",
+    Helvetica;
+  --babylonschool-edu-np-quicksand-bold-upper-font-size: 14px;
+  --babylonschool-edu-np-quicksand-bold-upper-font-style: normal;
+  --babylonschool-edu-np-quicksand-bold-upper-font-weight: 700;
+  --babylonschool-edu-np-quicksand-bold-upper-letter-spacing: 0px;
+  --babylonschool-edu-np-quicksand-bold-upper-line-height: 17.5px;
+  --babylonschool-edu-np-quicksand-medium-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-quicksand-medium-font-size: 14px;
+  --babylonschool-edu-np-quicksand-medium-font-style: normal;
+  --babylonschool-edu-np-quicksand-medium-font-weight: 500;
+  --babylonschool-edu-np-quicksand-medium-letter-spacing: 0px;
+  --babylonschool-edu-np-quicksand-medium-line-height: 21px;
+  --babylonschool-edu-np-quicksand-medium-title-font-family: "Quicksand",
+    Helvetica;
+  --babylonschool-edu-np-quicksand-medium-title-font-size: 18px;
+  --babylonschool-edu-np-quicksand-medium-title-font-style: normal;
+  --babylonschool-edu-np-quicksand-medium-title-font-weight: 500;
+  --babylonschool-edu-np-quicksand-medium-title-letter-spacing: 5px;
+  --babylonschool-edu-np-quicksand-medium-title-line-height: 27px;
+  --babylonschool-edu-np-quicksand-regular-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-quicksand-regular-font-size: 18px;
+  --babylonschool-edu-np-quicksand-regular-font-style: normal;
+  --babylonschool-edu-np-quicksand-regular-font-weight: 400;
+  --babylonschool-edu-np-quicksand-regular-letter-spacing: 0px;
+  --babylonschool-edu-np-quicksand-regular-line-height: 36px;
+  --babylonschool-edu-np-semantic-button-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-button-font-size: 15px;
+  --babylonschool-edu-np-semantic-button-font-style: normal;
+  --babylonschool-edu-np-semantic-button-font-weight: 700;
+  --babylonschool-edu-np-semantic-button-letter-spacing: 0px;
+  --babylonschool-edu-np-semantic-button-line-height: 26.25px;
+  --babylonschool-edu-np-semantic-heading-1-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-heading-1-font-size: 18px;
+  --babylonschool-edu-np-semantic-heading-1-font-style: normal;
+  --babylonschool-edu-np-semantic-heading-1-font-weight: 700;
+  --babylonschool-edu-np-semantic-heading-1-letter-spacing: 2px;
+  --babylonschool-edu-np-semantic-heading-1-line-height: 21.010000228881836px;
+  --babylonschool-edu-np-semantic-heading-2-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-heading-2-font-size: 32px;
+  --babylonschool-edu-np-semantic-heading-2-font-style: normal;
+  --babylonschool-edu-np-semantic-heading-2-font-weight: 700;
+  --babylonschool-edu-np-semantic-heading-2-letter-spacing: 0px;
+  --babylonschool-edu-np-semantic-heading-2-line-height: 38.400001525878906px;
+  --babylonschool-edu-np-semantic-heading-3-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-heading-3-font-size: 16px;
+  --babylonschool-edu-np-semantic-heading-3-font-style: normal;
+  --babylonschool-edu-np-semantic-heading-3-font-weight: 500;
+  --babylonschool-edu-np-semantic-heading-3-letter-spacing: 0px;
+  --babylonschool-edu-np-semantic-heading-3-line-height: 18.670000076293945px;
+  --babylonschool-edu-np-semantic-heading-4-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-heading-4-font-size: 18px;
+  --babylonschool-edu-np-semantic-heading-4-font-style: normal;
+  --babylonschool-edu-np-semantic-heading-4-font-weight: 700;
+  --babylonschool-edu-np-semantic-heading-4-letter-spacing: 2px;
+  --babylonschool-edu-np-semantic-heading-4-line-height: 21.600000381469727px;
+  --babylonschool-edu-np-semantic-heading-6-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-heading-6-font-size: 12px;
+  --babylonschool-edu-np-semantic-heading-6-font-style: normal;
+  --babylonschool-edu-np-semantic-heading-6-font-weight: 500;
+  --babylonschool-edu-np-semantic-heading-6-letter-spacing: 0px;
+  --babylonschool-edu-np-semantic-heading-6-line-height: 19.200000762939453px;
+  --babylonschool-edu-np-semantic-link-font-family: "Quicksand", Helvetica;
+  --babylonschool-edu-np-semantic-link-font-size: 15px;
+  --babylonschool-edu-np-semantic-link-font-style: normal;
+  --babylonschool-edu-np-semantic-link-font-weight: 700;
+  --babylonschool-edu-np-semantic-link-letter-spacing: 0px;
+  --babylonschool-edu-np-semantic-link-line-height: 26.25px;
+  --babylonschool-edu-np-semantic-strong-font-family: "Preeti", Helvetica;
+  --babylonschool-edu-np-semantic-strong-font-size: 18px;
+  --babylonschool-edu-np-semantic-strong-font-style: normal;
+  --babylonschool-edu-np-semantic-strong-font-weight: 400;
+  --babylonschool-edu-np-semantic-strong-letter-spacing: 0px;
+  --babylonschool-edu-np-semantic-strong-line-height: 36px;
+  --babylonschooledunpalizarin-crimson: rgba(213, 32, 39, 1);
+  --babylonschooledunpblack: rgba(0, 0, 0, 1);
+  --babylonschooledunpblack-4: rgba(0, 0, 0, 0.04);
+  --babylonschooledunpclear-day: rgba(244, 255, 251, 1);
+  --babylonschooledunpcyan-aqua-30: rgba(12, 207, 254, 0.3);
+  --babylonschooledunpeastern-blue: rgba(18, 165, 191, 1);
+  --babylonschooledunpfair-pink: rgba(255, 240, 236, 1);
+  --babylonschooledunpgallery: rgba(238, 238, 238, 1);
+  --babylonschooledunplavender-blush: rgba(243, 240, 253, 1);
+  --babylonschooledunpmagnolia: rgba(249, 248, 255, 1);
+  --babylonschooledunpmartinique: rgba(59, 54, 100, 1);
+  --babylonschooledunporange-peel: rgba(252, 160, 0, 1);
+  --babylonschooledunpselago: rgba(243, 240, 253, 1);
+  --babylonschooledunpselago-47: rgba(235, 245, 252, 0.47);
+  --babylonschooledunpshamrock-30: rgba(67, 233, 123, 0.3);
+  --babylonschooledunptorch-red-30: rgba(255, 8, 68, 0.3);
+  --babylonschooledunptuna: rgba(50, 50, 57, 1);
+  --babylonschooledunptundora: rgba(67, 67, 67, 1);
+  --babylonschooledunpwhite: rgba(255, 255, 255, 1);
+  --babylonschooledunpwhite-02: rgba(255, 255, 255, 0.0);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
