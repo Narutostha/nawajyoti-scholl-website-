@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header";
 import { TopHeader } from "./components/TopHeader";
 import { Footer } from "./components/Footer";
@@ -37,122 +37,124 @@ import { AdminProtectedRoute } from "./components/AdminProtectedRoute";
 
 const App = (): JSX.Element => {
   return (
-    <Router>
+    <Router basename="/">
       <ScrollToTop />
       <Routes>
         {/* Admin Routes */}
-        <Route path="/admin/login" element={<LoginPage />} />
-        <Route path="/admin/register" element={<RegisterPage />} />
-        <Route 
-          path="/admin/dashboard" 
-          element={
-            <AdminProtectedRoute>
-              <DashboardPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/news" 
-          element={
-            <AdminProtectedRoute>
-              <AdminNewsPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/hero-carousel" 
-          element={
-            <AdminProtectedRoute>
-              <HeroCarouselPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/programs" 
-          element={
-            <AdminProtectedRoute>
-              <AdminProgramsPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/gallery" 
-          element={
-            <AdminProtectedRoute>
-              <AdminGalleryPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/staff" 
-          element={
-            <AdminProtectedRoute>
-              <StaffPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/settings" 
-          element={
-            <AdminProtectedRoute>
-              <SettingsPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/events" 
-          element={
-            <AdminProtectedRoute>
-              <EventsPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/testimonials" 
-          element={
-            <AdminProtectedRoute>
-              <TestimonialsPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/syllabus" 
-          element={
-            <AdminProtectedRoute>
-              <AdminSyllabusPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        {/* Contact Management Routes */}
-        <Route 
-          path="/admin/enquiries" 
-          element={
-            <AdminProtectedRoute>
-              <EnquiriesPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        <Route 
-          path="/admin/contact-details" 
-          element={
-            <AdminProtectedRoute>
-              <ContactDetailsPage />
-            </AdminProtectedRoute>
-          } 
-        />
-        {/* Application Management Route */}
-        <Route 
-          path="/admin/applications" 
-          element={
-            <AdminProtectedRoute>
-              <ApplicationsPage />
-            </AdminProtectedRoute>
-          } 
-        />
+        <Route path="/admin">
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route 
+            path="dashboard" 
+            element={
+              <AdminProtectedRoute>
+                <DashboardPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="news" 
+            element={
+              <AdminProtectedRoute>
+                <AdminNewsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="hero-carousel" 
+            element={
+              <AdminProtectedRoute>
+                <HeroCarouselPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="programs" 
+            element={
+              <AdminProtectedRoute>
+                <AdminProgramsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="gallery" 
+            element={
+              <AdminProtectedRoute>
+                <AdminGalleryPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="staff" 
+            element={
+              <AdminProtectedRoute>
+                <StaffPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="settings" 
+            element={
+              <AdminProtectedRoute>
+                <SettingsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="events" 
+            element={
+              <AdminProtectedRoute>
+                <EventsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="testimonials" 
+            element={
+              <AdminProtectedRoute>
+                <TestimonialsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="syllabus" 
+            element={
+              <AdminProtectedRoute>
+                <AdminSyllabusPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="enquiries" 
+            element={
+              <AdminProtectedRoute>
+                <EnquiriesPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="contact-details" 
+            element={
+              <AdminProtectedRoute>
+                <ContactDetailsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          <Route 
+            path="applications" 
+            element={
+              <AdminProtectedRoute>
+                <ApplicationsPage />
+              </AdminProtectedRoute>
+            } 
+          />
+          {/* Redirect /admin to /admin/dashboard */}
+          <Route index element={<Navigate to="/admin/login" replace />} />
+        </Route>
         
         {/* Public Routes */}
         <Route
-          path="/*"
+          path="/"
           element={
             <div className="min-h-screen flex flex-col">
               <div className="fixed top-0 left-0 right-0 z-50">
@@ -161,20 +163,22 @@ const App = (): JSX.Element => {
               </div>
               <main className="flex-grow pt-[120px]">
                 <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/gallery" element={<PublicGalleryPage />} />
-                  <Route path="/information-center" element={<InformationCenterPage />} />
-                  <Route path="/babylon-buds" element={<BabylonBudsPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/news" element={<PublicNewsPage />} />
-                  <Route path="/syllabus" element={<SyllabusPage />} />
-                  <Route path="/calendar" element={<CalendarPage />} />
-                  <Route path="/programs" element={<PublicProgramsPage />} />
-                  <Route path="/career" element={<CareerPage />} />
-                  <Route path="/apply" element={<ApplyNowPage />} />
-                  <Route path="/events" element={<EventsListingPage />} />
-                  <Route path="/events/:eventId" element={<EventPage />} />
+                  <Route index element={<HomePage />} />
+                  <Route path="about" element={<AboutPage />} />
+                  <Route path="gallery" element={<PublicGalleryPage />} />
+                  <Route path="information-center" element={<InformationCenterPage />} />
+                  <Route path="babylon-buds" element={<BabylonBudsPage />} />
+                  <Route path="contact" element={<ContactPage />} />
+                  <Route path="news" element={<PublicNewsPage />} />
+                  <Route path="syllabus" element={<SyllabusPage />} />
+                  <Route path="calendar" element={<CalendarPage />} />
+                  <Route path="programs" element={<PublicProgramsPage />} />
+                  <Route path="career" element={<CareerPage />} />
+                  <Route path="apply" element={<ApplyNowPage />} />
+                  <Route path="events" element={<EventsListingPage />} />
+                  <Route path="events/:eventId" element={<EventPage />} />
+                  {/* Catch all route - redirect to home */}
+                  <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
               </main>
               <Footer />
