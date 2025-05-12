@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Header } from "./components/Header";
 import { TopHeader } from "./components/TopHeader";
 import { Footer } from "./components/Footer";
@@ -34,6 +34,22 @@ import { ContactDetailsPage } from "./pages/admin/ContactDetailsPage";
 import { ApplicationsPage } from "./pages/admin/ApplicationPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { AdminProtectedRoute } from "./components/AdminProtectedRoute";
+
+// Layout component for public routes
+const PublicLayout = ({ children }: { children: React.ReactNode }): JSX.Element => {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <TopHeader data-topheader="true" />
+        <Header data-mainheader="true" />
+      </div>
+      <main className="flex-grow pt-[120px]">
+        {children}
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
 const App = (): JSX.Element => {
   return (
@@ -123,7 +139,6 @@ const App = (): JSX.Element => {
             </AdminProtectedRoute>
           } 
         />
-        {/* Contact Management Routes */}
         <Route 
           path="/admin/enquiries" 
           element={
@@ -140,7 +155,6 @@ const App = (): JSX.Element => {
             </AdminProtectedRoute>
           } 
         />
-        {/* Application Management Route */}
         <Route 
           path="/admin/applications" 
           element={
@@ -149,38 +163,27 @@ const App = (): JSX.Element => {
             </AdminProtectedRoute>
           } 
         />
+        {/* Redirect /admin to /admin/login */}
+        <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
         
-        {/* Public Routes */}
-        <Route
-          path="/*"
-          element={
-            <div className="min-h-screen flex flex-col">
-              <div className="fixed top-0 left-0 right-0 z-50">
-                <TopHeader data-topheader="true" />
-                <Header data-mainheader="true" />
-              </div>
-              <main className="flex-grow pt-[120px]">
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/gallery" element={<PublicGalleryPage />} />
-                  <Route path="/information-center" element={<InformationCenterPage />} />
-                  <Route path="/babylon-buds" element={<BabylonBudsPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/news" element={<PublicNewsPage />} />
-                  <Route path="/syllabus" element={<SyllabusPage />} />
-                  <Route path="/calendar" element={<CalendarPage />} />
-                  <Route path="/programs" element={<PublicProgramsPage />} />
-                  <Route path="/career" element={<CareerPage />} />
-                  <Route path="/apply" element={<ApplyNowPage />} />
-                  <Route path="/events" element={<EventsListingPage />} />
-                  <Route path="/events/:eventId" element={<EventPage />} />
-                </Routes>
-              </main>
-              <Footer />
-            </div>
-          }
-        />
+        {/* Public Routes with Layout */}
+        <Route path="/" element={<PublicLayout><HomePage /></PublicLayout>} />
+        <Route path="/about" element={<PublicLayout><AboutPage /></PublicLayout>} />
+        <Route path="/gallery" element={<PublicLayout><PublicGalleryPage /></PublicLayout>} />
+        <Route path="/information-center" element={<PublicLayout><InformationCenterPage /></PublicLayout>} />
+        <Route path="/babylon-buds" element={<PublicLayout><BabylonBudsPage /></PublicLayout>} />
+        <Route path="/contact" element={<PublicLayout><ContactPage /></PublicLayout>} />
+        <Route path="/news" element={<PublicLayout><PublicNewsPage /></PublicLayout>} />
+        <Route path="/syllabus" element={<PublicLayout><SyllabusPage /></PublicLayout>} />
+        <Route path="/calendar" element={<PublicLayout><CalendarPage /></PublicLayout>} />
+        <Route path="/programs" element={<PublicLayout><PublicProgramsPage /></PublicLayout>} />
+        <Route path="/career" element={<PublicLayout><CareerPage /></PublicLayout>} />
+        <Route path="/apply" element={<PublicLayout><ApplyNowPage /></PublicLayout>} />
+        <Route path="/events" element={<PublicLayout><EventsListingPage /></PublicLayout>} />
+        <Route path="/events/:eventId" element={<PublicLayout><EventPage /></PublicLayout>} />
+        
+        {/* Catch all route - redirect to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

@@ -170,12 +170,9 @@ export const ServicesSection = (): JSX.Element => {
                 </div>
                 <div className="p-8 lg:p-12">
                   <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
-                    Cafeteria
+                    What Principle Says 
                   </h3>
-                  <p className="text-gray-600 mb-8">
-                    Indulge in a healthy culinary experience at our school cafeteria, where we prioritize 
-                    the well-being of our students. Our hygienic cafeteria is dedicated to serving nutritious 
-                    meals, providing a foundation for their overall growth and development.
+                  <p className="text-gray-600 mb-8">Helllo 
                   </p>
                   <Button className="bg-[#12A5BF] hover:bg-[#0f8fa6]">
                     Learn More
